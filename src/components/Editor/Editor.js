@@ -2,12 +2,15 @@ import React from 'react';
 
 import './Editor.css';
 
-export default function Editor({ title, setTitle, subtitle, setSub }) {
+export default function Editor({ setTitle, setSub, setBody }) {
   const handleTitle = (event) => {
     setTitle(event.target.value);
   };
   const handleSub = (event) => {
     setSub(event.target.value);
+  };
+  const handleBody = (event) => {
+    setBody(event.target.value);
   };
 
   return (
@@ -51,7 +54,7 @@ export default function Editor({ title, setTitle, subtitle, setSub }) {
         </div>
       </div>
       <div className="form-control">
-        <textarea style={{ height: '250px' }} />
+        <textarea style={{ height: '250px' }} onChange={handleBody} />
         <label>Text</label>
       </div>
     </div>
